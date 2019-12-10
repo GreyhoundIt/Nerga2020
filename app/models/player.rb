@@ -3,10 +3,8 @@
 class Player < ApplicationRecord
   require 'csv'
 
-  PLAYER_FILE_PATH = 'public/players.csv'
-
-  def self.upload_players
-    CSV.foreach('public/players.csv', headers: true) do |row|
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
       Player.upsert({
                       surname: row[0],
                       first_name: row['FIRST NAME'],
@@ -16,4 +14,5 @@ class Player < ApplicationRecord
                     }, unique_by: :pin)
     end
   end
+
 end

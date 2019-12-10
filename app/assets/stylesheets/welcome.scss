@@ -1,3 +1,316 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//$bg_colour: #6e961b;
+//$secondary_colour: #2b6e2d;
+//$third_colour: #0e421a;
+//$font_primary_color: #e2e2e2;
+//$forth_colour: #35a541;
+
+$bg_colour: #f1f2f4;
+$secondary_colour: #38393a;
+$third_colour: #5bb5f9;
+$font_primary_color: #e2e2e2;
+$forth_colour: #35a541;
+//$bg_colour: rgb(138, 161, 191);
+//$secondary_colour: rgb(85, 140, 70);
+//$third_colour: rgb(127, 166, 109);
+//$font_primary_color: rgb(191, 205, 217);
+//$forth_colour: rgb(191, 205, 217);
+
+body {
+  background-color: $bg_colour;
+  font-family: 'Open Sans', sans-serif;
+}
+
+p, li {
+  margin: 0 0 10px;
+}
+
+a{
+  text-decoration: none;
+  color: $font_primary_color;
+}
+
+a:hover {
+  color: $third_colour;
+}
+
+h1{
+  font-size: 3em;
+  padding-bottom: 10px;
+  color: $third_colour;
+}
+h2{
+  color: $third_colour;
+  font-size: 1.75em;
+  margin: 10px 0px;
+}
+
+h3 {
+  font-size: 1.50em;
+  padding-bottom: 10px;
+}
+header {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-gap: 20px;
+  height:140px;
+  padding: 0 20px;
+  background-color: $secondary_colour;
+}
+
+.navbar-nav {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr) 2fr;
+  text-align: center;
+  list-style-type: none;
+  align-content: center;
+
+  .nav-item {
+    align-content: center;
+  }
+}
+
+.logo{
+  max-height: 120px;
+}
+
+.homepage-main{
+  background-size: contain;
+  background: url(asset_path('bg.png')) no-repeat center center;
+  height: calc(100vh - 344px);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+}
+//.homepage-content {
+//  background-color: $bg_colour;
+//  justify-content: center;
+//  text-align: center;
+//  padding: 20px;
+//  margin:0  20px;
+//  border-radius: 4px;
+//}
+
+.homepage-section{
+  display:grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+  //background-color: $secondary_colour;
+  background-color: $bg_colour;
+  justify-content: center;
+  text-align: center;
+  color: $secondary_colour;
+  padding: 20px;
+  align-content: center;
+  p{
+    padding: 10px;
+    line-height: 1.5rem;
+    color: $font_primary_color;
+    background: $secondary_colour;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .homepage-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+//.homepage-link-container:hover {
+//  .fa {
+//    color: $third_colour;
+//    font-size: 64px;
+//    padding: 20px;
+//  }
+//    color: $bg_colour;
+//}
+
+//.homepage-link-container:not(:last-of-type){
+//  margin-bottom: 20px;
+//}
+//
+//.homepage-link-icon{
+//  display: block;
+//  background: $secondary_colour;
+//  border: 1px dashed $bg_colour;
+//  border-radius: 4px;
+//  margin-bottom: 12px;
+//}
+//
+//@media only screen and (min-width: 600px) {
+//  .homepage-main{
+//    grid-template-columns: 1fr 1fr;
+//  }
+//  .homepage-section {
+//    grid-template-columns: repeat(3, 1fr);
+//  }
+//}
+//
+//@media only screen and (min-width: 1025px) {
+//  .homepage-section {
+//    grid-template-columns: repeat(7, 1fr);
+//  }
+//
+//  .homepage-link-container:not(:last-of-type){
+//    margin-bottom: 0;
+//  }
+//}
+
+footer{
+  height: 20px;
+  text-align: right;
+  margin-right: 20px;
+  color: $third_colour;
+}
+
+.rules-main {
+  margin:20px;
+}
+.rules-title {
+  text-align: center;
+}
+
+.constitution, .match-rules{
+  background-color: white;
+  color: $secondary_colour;
+  margin-bottom:40px;
+  padding: 20px;
+  h2{
+    text-align: center;
+    background-color: $secondary_colour;
+    padding: 20px;
+  }
+}
+
+.rule-ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  li {
+    counter-increment: my-awesome-counter;
+    display: flex;
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  li::before {
+    content: "0" counter(my-awesome-counter);
+    font-weight: bold;
+    font-size: 3rem;
+    margin-right: 0.5rem;
+    color: $third_colour;
+    font-family: 'Abril Fatface', serif;
+    line-height: 1;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+
+  .constitution, .match-rules {
+    margin: 40px 190px;
+    h2{
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.links-section{
+  display:grid;
+  grid-template-columns: repeat(1,1fr);
+  margin-top: 20px;
+}
+
+.links-card {
+  display: inline-grid;
+  background-color: $secondary_colour;
+  text-align: center;
+  border: 1px dashed $bg_colour;
+  margin-bottom: 20px;
+
+
+  .fab {
+    color: $third_colour;
+    font-size: 1.25em;
+    padding: 15px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .links-section{
+    grid-template-columns: repeat(2, 1fr);
+    background-color: white;
+  }
+  .links-card {
+    margin: 20px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .links-section{
+    grid-template-columns: repeat(4, 1fr);
+    background-color: white;
+  }
+  .links-card {
+    margin: 20px;
+  }
+}
+
+.honour-year-box{
+  background-color: white;
+  padding:10px;
+  margin:10px;
+}
+.year{
+  background-color: $secondary_colour;
+  font-weight: bolder;
+  text-align: center;
+}
+.nerga, .inter {
+  text-align: center;
+}
+
+.winner{
+  font-weight: bold;
+  padding: 10px;
+}
+.runner-up{
+  padding: 10px;
+  font-style: italic;
+  font-size: .90em;
+}
+
+@media only screen and (min-width: 900px) {
+  .honour-year-box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
+    padding: 20px;
+    border: 1px dashed $bg_colour;
+  }
+  .year {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+
+.sponsors-main{
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+.sponsors-section{
+  margin: 10px;
+  img{
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .sponsors-section {
+    margin: 20px;
+  }
+}

@@ -1,7 +1,20 @@
 class WelcomeController < ApplicationController
 
   def index
-    Player.upload_players
   end
 
+  def home
+  end
+
+  def rules
+  end
+
+  def links
+  end
+
+  def honours
+  end
+
+  def sponsors
+  end
 end
