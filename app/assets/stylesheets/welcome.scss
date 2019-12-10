@@ -1,19 +1,7 @@
-//$bg_colour: #6e961b;
-//$secondary_colour: #2b6e2d;
-//$third_colour: #0e421a;
-//$font_primary_color: #e2e2e2;
-//$forth_colour: #35a541;
-
 $bg_colour: #f1f2f4;
 $secondary_colour: #38393a;
 $third_colour: #5bb5f9;
 $font_primary_color: #e2e2e2;
-$forth_colour: #35a541;
-//$bg_colour: rgb(138, 161, 191);
-//$secondary_colour: rgb(85, 140, 70);
-//$third_colour: rgb(127, 166, 109);
-//$font_primary_color: rgb(191, 205, 217);
-//$forth_colour: rgb(191, 205, 217);
 
 body {
   background-color: $bg_colour;
@@ -79,23 +67,26 @@ header {
   background: url(asset_path('bg.png')) no-repeat center center;
   height: calc(100vh - 344px);
   display: grid;
-  grid-template-columns: 1fr;
-  align-content: center;
+  grid-template-columns: repeat(1, 1fr);
+  align-content: end;
 }
-//.homepage-content {
-//  background-color: $bg_colour;
-//  justify-content: center;
-//  text-align: center;
-//  padding: 20px;
-//  margin:0  20px;
-//  border-radius: 4px;
-//}
+
+.home-title{
+  color: white;
+  font-size: 5rem;
+  margin-left: 20px;
+  margin-top:40px;
+}
+.home-tagline{
+  color: white;
+  margin-bottom:30px;
+  margin-left:20px;
+}
 
 .homepage-section{
   display:grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
-  //background-color: $secondary_colour;
   background-color: $bg_colour;
   justify-content: center;
   text-align: center;
@@ -114,47 +105,11 @@ header {
   .homepage-section {
     grid-template-columns: repeat(3, 1fr);
   }
+  .home-title, .home-tagline{
+    margin-left:40px;
+  }
 }
 
-//.homepage-link-container:hover {
-//  .fa {
-//    color: $third_colour;
-//    font-size: 64px;
-//    padding: 20px;
-//  }
-//    color: $bg_colour;
-//}
-
-//.homepage-link-container:not(:last-of-type){
-//  margin-bottom: 20px;
-//}
-//
-//.homepage-link-icon{
-//  display: block;
-//  background: $secondary_colour;
-//  border: 1px dashed $bg_colour;
-//  border-radius: 4px;
-//  margin-bottom: 12px;
-//}
-//
-//@media only screen and (min-width: 600px) {
-//  .homepage-main{
-//    grid-template-columns: 1fr 1fr;
-//  }
-//  .homepage-section {
-//    grid-template-columns: repeat(3, 1fr);
-//  }
-//}
-//
-//@media only screen and (min-width: 1025px) {
-//  .homepage-section {
-//    grid-template-columns: repeat(7, 1fr);
-//  }
-//
-//  .homepage-link-container:not(:last-of-type){
-//    margin-bottom: 0;
-//  }
-//}
 
 footer{
   height: 20px;
