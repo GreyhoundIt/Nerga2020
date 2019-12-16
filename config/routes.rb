@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   end
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get 'links' => 'welcome#links'
-  get 'honours' => 'welcome#honours'
-  get 'rules' => 'welcome#rules'
-  get 'sponsors' => 'welcome#sponsors'
-  root to: 'welcome#home'
+  get 'links' => 'static_pages#links'
+  get 'honours' => 'static_pages#honours'
+  get 'rules' => 'static_pages#rules'
+  get 'sponsors' => 'static_pages#sponsors'
+  root to: 'static_pages#home'
 end
