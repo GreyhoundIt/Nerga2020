@@ -10,6 +10,7 @@ class StaticPagesController < ApplicationController
   end
 
   def links
+    @clubs = Club.published.order(:name)
   end
 
   def honours

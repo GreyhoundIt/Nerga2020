@@ -1,0 +1,19 @@
+= form_for @admin_club, url: admin_club_path(@admin_club) do |f|
+  - if @admin_club.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@admin_club.errors.count, "error")} prohibited this admin_club from being saved:"
+      %ul
+        - @admin_club.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :postcode
+    = f.text_field :postcode
+  .field
+    = f.label :website
+    = f.text_field :website
+  .actions
+    = f.submit 'Save'

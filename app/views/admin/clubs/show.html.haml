@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @admin_club.name
+%p
+  %b Postcode:
+  = @admin_club.postcode
+%p
+  %b Website:
+  = @admin_club.website
+
+= link_to 'Edit', edit_admin_club_path(@admin_club)
+\|
+= link_to 'Back', admin_clubs_path
