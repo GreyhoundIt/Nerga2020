@@ -1,0 +1,9 @@
+%main.links-main
+  %section.links-section
+    - @clubs.each do |club|
+      .links-card
+        %a.links-link{href: club.website, target: "_blank"}
+          .fab.fa-font-awesome-flag
+          %h3= club.name
+          %p= club.postcode
+          %p= club.website

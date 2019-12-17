@@ -1,0 +1,32 @@
+%h1 Listing admin_clubs
+
+%p
+  Theres are #{@admin_clubs.count} clubs registered
+= form_tag import_admin_clubs_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import CSV"
+
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Postcode
+      %th Website
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_clubs.each do |admin_club|
+      %tr
+        %td= admin_club.name
+        %td= admin_club.postcode
+        %td= admin_club.website
+        %td= link_to 'Show', admin_club_path(admin_club)
+        %td= link_to 'Edit', edit_admin_club_path(admin_club)
+        %td= link_to 'Destroy', admin_club_path(admin_club), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Club', new_admin_club_path
