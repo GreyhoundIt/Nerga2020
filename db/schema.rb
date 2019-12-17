@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_201410) do
+ActiveRecord::Schema.define(version: 2019_12_17_200139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,18 @@ ActiveRecord::Schema.define(version: 2019_12_16_201410) do
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "zones", force: :cascade do |t|
+    t.string "name"
+    t.string "league"
+    t.string "rep"
+    t.string "rep_club"
+    t.string "team_overall_url"
+    t.string "person_overall_url"
+    t.datetime "created_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.index ["name"], name: "index_zones_on_name", unique: true
   end
 
 end

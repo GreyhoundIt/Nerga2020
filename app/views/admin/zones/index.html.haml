@@ -1,0 +1,37 @@
+%h1 Listing Zones
+
+%p
+  Theres are #{@admin_zones.count} zones registered
+= form_tag import_admin_zones_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import CSV"
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th League
+      %th Rep
+      %th Rep Club
+      %th Team overall url
+      %th Person overall url
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_zones.each do |admin_zone|
+      %tr
+        %td= admin_zone.name
+        %td= admin_zone.league
+        %td= admin_zone.rep
+        %td= admin_zone.rep_club
+        %td= admin_zone.team_overall_url
+        %td= admin_zone.person_overall_url
+        %td= link_to 'Show', admin_zone_path(admin_zone)
+        %td= link_to 'Edit', edit_admin_zone_path(admin_zone)
+        %td= link_to 'Destroy', admin_zone_path(admin_zone), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Zone', new_admin_zone_path
