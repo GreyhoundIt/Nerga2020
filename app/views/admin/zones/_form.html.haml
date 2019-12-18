@@ -1,0 +1,28 @@
+= form_for @admin_zone, url: admin_zone_path(@admin_zone) do |f|
+  - if @admin_zone.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@admin_zone.errors.count, "error")} prohibited this admin_zone from being saved:"
+      %ul
+        - @admin_zone.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :league
+    = f.text_field :league
+  .field
+    = f.label :rep
+    = f.text_field :rep
+  .field
+    = f.label :rep_club
+    = f.text_field :rep_club
+  .field
+    = f.label :team_overall_url
+    = f.text_field :team_overall_url
+  .field
+    = f.label :person_overall_url
+    = f.text_field :person_overall_url
+  .actions
+    = f.submit 'Save'
