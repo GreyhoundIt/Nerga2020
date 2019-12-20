@@ -5,15 +5,13 @@
   = file_field_tag :file
   = submit_tag "Import CSV"
 
-
 %h2 Players not linked to clubs
 %table
   %thead
     %tr
-      %th Firstname
+      %th First name
       %th Surname
       %th Club
-
 
   %tbody
     - @issues.each do |player|

@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class Player < ApplicationRecord
   require 'csv'
 
@@ -16,5 +15,4 @@ class Player < ApplicationRecord
                     }, unique_by: :pin)
     end
   end
-
 end
