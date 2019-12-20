@@ -2,12 +2,12 @@ NAME,POSTCODE,WEBSITE
 Crook,DL15 9AA,http://crookgolfclub.co.uk/
 Bedale,Dl8 1EZ,http://www.bedalegolfclub.com/
 South Moor,DH9 6AS,http://www.southmoorgc.co.uk/
-Richmond,DL10 5EX,http://www.richmondyorksgolfclub.co.uk/
+Richmond (Yorkshire),DL10 5EX,http://www.richmondyorksgolfclub.co.uk/
 Whitby,YO21 3JL,http://whitbygolfclub.info/
 Billingham,TS22 5NA,http://www.billinghamgolfclub.com/
 Romanby,DL7 0PE,http://www.romanby.com/
 Chester-le-Street,DH3 4NS,http://www.clsgolfclub.co.uk/
-Dinsdale Spa,DL2 1DWh,http://www.dinsdalespagolfclub.co.uk/
+Dinsdale,DL2 1DWh,http://www.dinsdalespagolfclub.co.uk/
 Kirkbymoorside,YO62 6EG,http://www.kirkbymoorsidegolf.co.uk/
 Catterick,DL9 3QE,http://www.catterickgolfclub.co.uk
 Houghton-le-Spring,DH5 8LU,http://www.houghtongolfclub.co.uk/
@@ -16,7 +16,7 @@ Ripon City,HG4 3HH,http://www.riponcitygolfclub.com/
 Bishop Auckland,DL14 8DL,http://www.bagc.co.uk/
 Prudhoe,NE42 5DX,http://www.prudhoegolfclub.co.uk/
 Darlington,DL1 3JD,http://www.darlington-gc.co.uk/
-Thirsk and Northallerton,YO7 4AB,http://www.tngc.co.uk/
+Thirsk & Northallerton,YO7 4AB,http://www.tngc.co.uk/
 Roseberry Grange,DH2 3NF,http://www.roseberrygrange.com/
 Seaham,SR7 7UT,http://www.seahamgolfclub.co.uk/
 Boldon,NE36 0PQ,http://boldongolfclub.co.uk/Intro.aspx
@@ -28,13 +28,16 @@ Ravensworth,NE9 7NE,http://www.ravensworthgolfclub.co.uk/
 Aldwark Manor,YO61 1UF,http://www.aldwarkmanorgolfclub.co.uk/
 Rudding Park,HG3 1JH,https://www.ruddingpark.co.uk/play/
 Filey,YO14 9BQ,http://www.fileygolfclub.com/
-Scarborough North,YO12 6PP,http://www.northcliffgolfclub.com/
-KP Club,YO42 1UF,http://www.thekp.co.uk/golf
+Scarborough North Cliff,YO12 6PP,http://www.northcliffgolfclub.com/
+The KP Club,YO42 1UF,http://www.thekp.co.uk/golf
 Forest Park,YO32 9WD,http://www.forestparkgolfclub.co.uk/
 Easingwold,YO61 3ET,http://www.easingwoldgolfclub.co.uk/
-Malton and Norton,YO17 9QE,http://www.maltonandnortongolfclub.co.uk/
+Malton & Norton,YO17 9QE,http://www.maltonandnortongolfclub.co.uk/
 Hunley,TS12 2FT,http://www.hunleyhotel.co.uk/
 Wetherby,LS22 4JF,http://www.wetherbygolfclub.co.uk/
 Boothferry,DN14 7NG,http://boothferrygolfclub.co.uk/
 Oakleaf,DL5 6QZ,http://www.great-aycliffe.gov.uk/oakleafgolfcomplex/home/
 Google,AA12 2ZZ,http://www.google.co.uk/
+Drax,YO8 8PJ,https://www.draxgolfclub.com/
+Teesside,TS17 7JS,https://www.teessidegolfclub.com/
+

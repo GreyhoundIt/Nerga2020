@@ -4,3 +4,20 @@
 = form_tag import_players_path, multipart: true do
   = file_field_tag :file
   = submit_tag "Import CSV"
+
+%h2 Players not linked to clubs
+%table
+  %thead
+    %tr
+      %th First name
+      %th Surname
+      %th Club
+
+  %tbody
+    - @issues.each do |player|
+      %tr
+        %td= player.first_name
+        %td= player.surname
+        %td= player.club
+
+%br

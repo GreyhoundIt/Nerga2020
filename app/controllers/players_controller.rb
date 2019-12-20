@@ -7,6 +7,7 @@ class PlayersController < ApplicationController
   end
 
   def index
+    @issues = Player.where(club_id: nil)
     @players = Player.all
   end
 
