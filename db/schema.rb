@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_21_211321) do
+ActiveRecord::Schema.define(version: 2019_12_22_160414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 2019_12_21_211321) do
     t.datetime "created_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.index ["name"], name: "index_clubs_on_name", unique: true
+  end
+
+  create_table "fixtures", force: :cascade do |t|
+    t.integer "zone_id"
+    t.string "zone_name"
+    t.datetime "start_time"
+    t.string "home_club"
+    t.string "bye_teams"
+    t.string "start_sheet_skeleton"
+    t.string "start_sheet_official"
+    t.string "team_overall"
+    t.string "person_overall"
+    t.datetime "created_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.index ["zone_id"], name: "index_fixtures_on_zone_id"
+    t.index ["zone_name", "home_club"], name: "index_fixtures_on_zone_name_and_home_club", unique: true
   end
 
   create_table "memberships", force: :cascade do |t|

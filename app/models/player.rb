@@ -2,6 +2,8 @@
 class Player < ApplicationRecord
   require 'csv'
 
+  belongs_to :club
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       club = Club.find_by(name: row['HOME CLUB'])

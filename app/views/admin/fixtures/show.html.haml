@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Zone:
+  = @admin_fixture.zone_id
+%p
+  %b Zone name:
+  = @admin_fixture.zone_name
+%p
+  %b Home club:
+  = @admin_fixture.home_club
+%p
+  %b Bye teams:
+  = @admin_fixture.bye_teams
+%p
+  %b Start sheet skeleton:
+  = @admin_fixture.start_sheet_skeleton
+%p
+  %b Start sheet official:
+  = @admin_fixture.start_sheet_official
+%p
+  %b Team overall:
+  = @admin_fixture.team_overall
+%p
+  %b Person overall:
+  = @admin_fixture.person_overall
+
+= link_to 'Edit', edit_admin_fixture_path(@admin_fixture)
+\|
+= link_to 'Back', admin_fixtures_path
