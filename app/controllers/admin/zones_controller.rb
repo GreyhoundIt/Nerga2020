@@ -75,6 +75,6 @@ class Admin::ZonesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_zone_params
-      params.require(:zone).permit(:name, :league, :rep, :rep_club, :team_overall_url, :person_overall_url)
+      params.require(:zone).permit(:name, :league, :rep, :rep_club, :team_overall_url, :person_overall_url, club_ids: [])
     end
 end

@@ -15,5 +15,11 @@
   .field
     = f.label :website
     = f.text_field :website
+  .field
+    = hidden_field_tag "club[zone_ids][]", nil
+    - Zone.all.order("name asc").each do |zone|
+      = check_box_tag "club[zone_ids][]", zone.id, @admin_club.zone_ids.include?(zone.id), id: dom_id(zone)
+      = label_tag dom_id(zone), zone.name
+  %br/
   .actions
     = f.submit 'Save'
