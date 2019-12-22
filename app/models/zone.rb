@@ -3,6 +3,7 @@ class Zone < ApplicationRecord
   require 'csv'
   has_many :memberships
   has_many :clubs, :through => :memberships
+  has_many :fixtures
 
   scope :nerga, -> { where(league: 'Nerga') }
   scope :inter, -> { where(league: 'Inter') }

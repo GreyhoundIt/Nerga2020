@@ -1,0 +1,41 @@
+%h1 Listing admin_fixtures
+
+%p
+  Theres are #{@admin_fixtures.count} fixtures registered
+= form_tag import_admin_fixtures_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import CSV"
+
+%table
+  %thead
+    %tr
+      %th Zone
+      %th Zone name
+      %th Home club
+      %th Bye teams
+      %th Start sheet skeleton
+      %th Start sheet official
+      %th Team overall
+      %th Person overall
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_fixtures.each do |admin_fixture|
+      %tr
+        %td= admin_fixture.zone_id
+        %td= admin_fixture.zone_name
+        %td= admin_fixture.home_club
+        %td= admin_fixture.bye_teams
+        %td= admin_fixture.start_sheet_skeleton
+        %td= admin_fixture.start_sheet_official
+        %td= admin_fixture.team_overall
+        %td= admin_fixture.person_overall
+        %td= link_to 'Show', admin_fixture_path(admin_fixture)
+        %td= link_to 'Edit', edit_admin_fixture_path(admin_fixture)
+        %td= link_to 'Destroy', admin_fixture_path(admin_fixture), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Fixture', new_admin_fixture_path
