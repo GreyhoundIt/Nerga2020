@@ -24,5 +24,10 @@
   .field
     = f.label :person_overall_url
     = f.text_field :person_overall_url
+  .field
+    = hidden_field_tag "zone[club_ids][]", nil
+    - Club.all.order("name asc").each do |club|
+      = check_box_tag "zone[club_ids][]", club.id, @admin_zone.club_ids.include?(club.id), id: dom_id(club)
+      = label_tag dom_id(club), club.name
   .actions
     = f.submit 'Save'
