@@ -41,25 +41,32 @@ header {
   display: grid;
   grid-template-columns: 120px 1fr;
   grid-gap: 20px;
-  height:140px;
+  //height:140px;
   padding: 0 20px;
   background-color: $secondary_colour;
 }
 
-.navbar-nav {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr) 2fr;
-  text-align: center;
-  list-style-type: none;
-  align-content: center;
-
-  .nav-item {
-    align-content: center;
+.notice, .alert {
+  p{
+    margin: 0 0 0 0;
   }
 }
 
+//.navbar-nav {
+//  display: grid;
+//  grid-template-columns: repeat(8, 1fr) 2fr;
+//  text-align: center;
+//  list-style-type: none;
+//  align-content: center;
+//
+//  .nav-item {
+//    align-content: center;
+//  }
+//}
+
 .logo{
   max-height: 120px;
+  padding: 10px;
 }
 
 .homepage-main{
