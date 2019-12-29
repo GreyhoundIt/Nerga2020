@@ -4,9 +4,10 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("app")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -15,12 +16,6 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-window.onload= function (){
-    const btn = document.querySelector(".js-open-menu");
-    const nav = document.querySelector(".js-navigation");
 
-    btn.addEventListener("click", () => {
-        nav.classList.toggle("navigation--open");
-    })
-}
+
 
