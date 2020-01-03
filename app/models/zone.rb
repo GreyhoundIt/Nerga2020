@@ -5,7 +5,7 @@ class Zone < ApplicationRecord
   has_many :clubs, :through => :memberships
   has_many :fixtures
 
-  scope :nerga, -> { where(league: 'Nerga') }
+  scope :rabbits, -> { where(league: 'Rabbits') }
   scope :inter, -> { where(league: 'Inter') }
 
   def self.import(file)

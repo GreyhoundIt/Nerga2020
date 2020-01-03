@@ -3,7 +3,7 @@ class Admin::ClubsController < ApplicationController
 
   def import
     Club.import(params[:file])
-    flash[:notice] = "Player list updated"
+    flash[:notice] = "Club list updated"
     redirect_to admin_clubs_path
   end
 
