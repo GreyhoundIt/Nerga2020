@@ -1,9 +1,9 @@
-class PlayersController < ApplicationController
+class Admin::PlayersController < ApplicationController
 
   def import
     Player.import(params[:file])
     flash[:notice] = "Player list updated"
-    redirect_to players_path
+    redirect_to admin_players_path
   end
 
   def index

@@ -1,7 +1,7 @@
 %h1 Players#index
 %p
   Theres are #{@players.count} players registered
-= form_tag import_players_path, multipart: true do
+= form_tag import_admin_players_path, multipart: true do
   = file_field_tag :file
   = submit_tag "Import CSV"
 
