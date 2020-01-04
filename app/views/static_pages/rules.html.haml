@@ -1,0 +1,14 @@
+%main.rules-main
+  %h1.rules-title Rules
+  %section.constitution
+    %h2 Constitution
+    %ol.rule-ol
+      - t('rules.constitution.').each do |item|
+        %li.rule-li
+          = item[:rule].html_safe
+  %section.match-rules
+    %h2 Match Rules
+    %ol.rule-ol
+      - t('rules.match_rule.').each do |item|
+        %li.rule-li
+          = item[:rule].html_safe

@@ -2,7 +2,7 @@ class Fixture < ApplicationRecord
 
   require 'csv'
   belongs_to :zone
-
+  scope :fornight, -> { where 'start_time BETWEEN ? AND ?', Date.today, Date.today + 14.days }
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
