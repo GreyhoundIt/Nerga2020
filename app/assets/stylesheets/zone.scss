@@ -1,0 +1,60 @@
+@import "vars";
+@import "util";
+.zone-header{
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  justify-content: center;
+
+}
+.fixtures{
+  background-color: $bg_colour;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  .fixture{
+    background-color: white;
+    margin-top: 20px;
+    .venue{
+      background-color: $secondary_colour;
+      font-weight: bolder;
+      padding: 20px;
+    }
+    .start-time{
+      font-weight: bold;
+      margin:10px
+    }
+  }
+}
+@media only screen and (min-width: 900px) {
+  .fixture {
+    margin: 40px 190px;
+  }
+}
+
+.fortnight{
+  padding-top: 20px ;
+  background-color: $secondary_colour;
+  display:grid;
+  grid-template-columns: repeat(1,1fr);
+  margin-top: 20px;
+  text-align: center;
+}
+.upcoming-fixture {
+  display: inline-grid;
+  background-color: $secondary_colour;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.upcoming{
+  color: $font_primary_color;
+}
+.zone-overall{
+  width: 33vw;
+  margin: 10px auto;
+}
+
+.fixture-button{
+  display: block;
+}
