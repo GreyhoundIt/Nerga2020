@@ -59,6 +59,7 @@
 .login-main {
     background: #e2e2e2;
     text-align: center;
+
 }
 .login-main h2 {
     padding: 10px;
@@ -67,4 +68,10 @@
 }
 .login-main .field{
     padding: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+    .login-main {
+        margin: 40px 190px;
+    }
 }
