@@ -1,0 +1,4 @@
+%h1.title= @zone.name
+%h2.representative= "Zone Rep: #{@zone.rep} - #{@zone.rep_club}"
+= link_to "Team Overall", @zone.team_overall_url, :class => "pure-button fuller-button blue zone-overall"
+= link_to "Individual Overall", @zone.person_overall_url, :class => "pure-button fuller-button blue zone-overall"
