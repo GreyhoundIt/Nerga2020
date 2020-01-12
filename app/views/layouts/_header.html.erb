@@ -27,16 +27,25 @@
       <li class="nav-item">
         <%= link_to "Sponsors", sponsors_path %>
       </li>
-      <li class="nav-item">
-        <%= link_to new_user_session_path do %>
-          <span>
-            <i class="fas fa-user-circle"></i>
-            Log in
-          </span>
-        <% end %>
-<!--        <i class="fas fa-user-circle"></i> <%#= link_to('Login', new_user_session_path) %>-->
-<!--        <a class="nav-link" href="#">Log in</a>-->
-      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to( destroy_user_session_path, method: :delete) do %>
+            <span>
+              <i class="fas fa-sign-out-alt"></i>
+              Logout
+            </span>
+          <% end %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to new_user_session_path do %>
+            <span>
+              <i class="fas fa-user-circle"></i>
+              Log in
+            </span>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </header>
