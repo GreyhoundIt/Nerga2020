@@ -1,4 +1,4 @@
-class Admin::ClubsController < ApplicationController
+class Admin::ClubsController < ::Admin::BaseController
   before_action :set_admin_club, only: [:show, :edit, :update, :destroy]
 
   def import
@@ -8,7 +8,8 @@ class Admin::ClubsController < ApplicationController
   end
 
   # GET /admin/clubs
-  # GET /admin/clubs.json
+  # GET /admin/clubs.jsonc
+
   def index
     @admin_clubs = Club.all
   end

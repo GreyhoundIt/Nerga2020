@@ -1,29 +1,15 @@
 %section.zone-header
-  %h1.title= @zone.name
-  %h2.representative= "Zone Rep: #{@zone.rep} - #{@zone.rep_club}"
-  = link_to "Team Overall", @zone.team_overall_url, :class => "pure-button fuller-button blue zone-overall"
-  = link_to "Individual Overall", @zone.person_overall_url, :class => "pure-button fuller-button blue zone-overall"
+  = render "zones/header"
 
 %section.fortnight
   %h1 Upcoming Fixtures
   - @next_fixtures.each do |fixture|
-    %section.upcoming-fixture
-      %h2.venue= "Venue - #{fixture.home_club}"
-      %h3.start-time.upcoming= "Start time - #{fixture.start_time.strftime("%a %d %b ")} - #{fixture.start_time.strftime("%H:%M%p")}"
-      %p.upcoming= "None-playing Teams -  #{fixture.bye_teams}"
-      = link_to "Enter Team", "#jkjkdcjkdsncn", :class => "pure-button fuller-button blue-enter fixture-button"
+    = render "zones/upcoming", fixture: fixture
 
 
 %section.fixtures
   - @fixtures.each do |fixture|
-    %section.fixture
-      %h2.venue= "Venue - #{fixture.home_club}"
-      %h3.start-time= "Start time - #{fixture.start_time.strftime("%a %d %b ")} - #{fixture.start_time.strftime("%H:%M%p")}"
-      %p= "None-playing Teams -  #{fixture.bye_teams}"
-      = link_to "Start Sheet Skeleton", fixture.start_sheet_skeleton, :class => "pure-button fuller-button blue fixture-button"
-      = link_to "Start Sheet", fixture.start_sheet_official, :class => "pure-button fuller-button blue fixture-button"
-      = link_to "Team Overall", fixture.team_overall, :class => "pure-button fuller-button blue fixture-button"
-      = link_to "Individual Overall", fixture.person_overall, :class => "pure-button fuller-button blue fixture-button"
+    = render "zones/fixture", fixture: fixture
 
 
 

@@ -1,4 +1,4 @@
-class Admin::FixturesController < ApplicationController
+class Admin::FixturesController < ::Admin::BaseController
   before_action :set_admin_fixture, only: [:show, :edit, :update, :destroy]
 
   def import

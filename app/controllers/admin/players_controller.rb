@@ -1,4 +1,4 @@
-class Admin::PlayersController < ApplicationController
+class Admin::PlayersController < ::Admin::BaseController
 
   def import
     Player.import(params[:file])

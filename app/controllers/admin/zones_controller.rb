@@ -1,4 +1,4 @@
-class Admin::ZonesController < ApplicationController
+class Admin::ZonesController < ::Admin::BaseController
   before_action :set_admin_zone, only: [:show, :edit, :update, :destroy]
 
   def import

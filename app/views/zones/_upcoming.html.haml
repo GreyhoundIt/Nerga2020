@@ -1,0 +1,6 @@
+%section.upcoming-fixture
+  %h2.venue= "Venue - #{fixture.home_club}"
+  %h3.start-time.upcoming= "Start time - #{fixture.start_time.strftime("%a %d %b ")} - #{fixture.start_time.strftime("%H:%M%p")}"
+  %p.upcoming= "None-playing Teams -  #{fixture.bye_teams}"
+  -if user_can_enter_team?
+    = link_to "Enter Team", "#jkjkdcjkdsncn", :class => "pure-button fuller-button blue-enter fixture-button"
