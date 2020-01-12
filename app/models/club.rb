@@ -2,8 +2,9 @@ class Club < ApplicationRecord
 
   require 'csv'
   has_many :memberships
-  has_many :zones, :through => :memberships
+  has_many :zones, through: :memberships
   has_many :players
+  has_many :users
 
   scope :published, -> { where.not(name: 'Google') }
 
