@@ -10,10 +10,20 @@
         <%= link_to "Rules", rules_path %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">INTER</a>
+        <a class="nav-link dropdown-trigger" href="#">INTER</a>
+        <ul class="nav-dropdown">
+          <% inter_menu_items.each do |zone| %>
+            <li class="nav-dropdown-item"><%= link_to "#{zone.menu_name}" , zone_path(zone) %></li>
+          <% end %>
+        </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">NERGA</a>
+        <a class="nav-link dropdown-trigger" href="#">RABBITS</a>
+        <ul class="nav-dropdown">
+         <% rabbits_menu_items.each do |zone| %>
+            <li class="nav-dropdown-item"><%= link_to "#{zone.menu_name}" , zone_path(zone) %></li>
+          <% end %>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Finals Day</a>

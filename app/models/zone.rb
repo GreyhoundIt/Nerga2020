@@ -21,4 +21,8 @@ class Zone < ApplicationRecord
     end
   end
 
+  def menu_name
+    name.gsub(/(inter\s?)|(rabbits\s?)/i, '')
+  end
+
 end
