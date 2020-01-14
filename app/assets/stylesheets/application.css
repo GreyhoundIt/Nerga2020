@@ -19,22 +19,29 @@
 }
 
 .navigation--open {
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    align-items: center;
+    display: block;
+    grid-column: span 2;
 }
+
 .navbar-nav {
     display: grid;
     text-align: center;
-    list-style-type: none;
 }
 
 .nav-item {
-    align-content: center;
+    position: relative;
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
 }
 
-.nav-dropdown-item:first-of-type {
-    margin-top: 10px;
+.nav-link {
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.nav-dropdown-item:last-of-type {
+    margin-bottom: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -42,49 +49,45 @@
         display: none;
     }
 
-    .navbar-nav {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr) 2fr;
-        text-align: center;
-        list-style-type: none;
-        align-content: center;
-    }
-
-    .nav-item {
-        align-content: center;
-    }
-
     .navigation {
         display: grid;
         width: 100%;
     }
 
-    .nav-dropdown{
-        visibility: hidden;
-        opacity: 0;
+    .navbar-nav {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr) 2fr;
+        text-align: center;
+        align-content: center;
+    }
+
+
+    .nav-item,
+    .nav-link {
+        margin-bottom: 0;
+        font-size: inherit;
+    }
+
+    .nav-dropdown {
+        border-top: 10px solid #38393a;
         position: absolute;
         transition: all 0.5s ease;
-        margin-top: 1rem;
         display: none;
         background-color: #2E2F30;
-
+        padding-top: 10px;
+        width: 100%;
     }
 
-    a.dropdown-trigger:hover + .nav-dropdown
-    {
-        visibility: visible;
+    .dropdown-trigger:hover + .nav-dropdown,
+    .nav-dropdown:hover {
         opacity: 1;
         display: block;
-        width: 100%;
     }
 
-    .nav-dropdown-item {
-        position: relative;
-        width: 100%;
+    .nav-dropdown-item{
+        padding: 10px;
     }
-
 }
-
 
 .login-main {
     background: #e2e2e2;
