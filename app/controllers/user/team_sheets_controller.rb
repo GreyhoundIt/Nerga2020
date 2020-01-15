@@ -1,6 +1,8 @@
 class User::TeamSheetsController < ::User::BaseController
-  before_action :set_team_sheet, only: [:show, :edit, :update]
-
+  before_action :set_team_sheet, only: %i[show update]
+  before_action :set_fixture, only: %i[new edit]
+  before_action :set_players, only: %i[new edit]
+  before_action :set_zone, only: %i[new edit]
   # GET /user/team_sheets/1
   # GET /user/team_sheets/1.json
   def show
@@ -8,14 +10,12 @@ class User::TeamSheetsController < ::User::BaseController
 
   # GET /user/team_sheets/new
   def new
-    @zone = Zone.find(params[:zone_id])
-    @fixture = Fixture.find(params[:fixture_id])
     @team_sheet = TeamSheet.new
-    @players = current_user.club.players
   end
 
   # GET /user/team_sheets/1/edit
   def edit
+    @team_sheet = TeamSheet.where(fixture_id: @fixture.id).where(club_id: current_user.club.id).first
   end
 
   # POST /user/team_sheets
@@ -48,6 +48,18 @@ class User::TeamSheetsController < ::User::BaseController
   end
 
   private
+
+  def set_players
+    @players = current_user.club.players
+  end
+
+  def set_fixture
+    @fixture = Fixture.find(params[:fixture_id])
+  end
+
+  def set_zone
+    @zone = Zone.find(params[:zone_id])
+  end
 
   def set_team_sheet
     @team_sheet = TeamSheet.find(params[:id])

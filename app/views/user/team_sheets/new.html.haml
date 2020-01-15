@@ -1,13 +1,8 @@
 %h1 Team Sheet for #{@zone.name} fixture at #{@fixture.home_club}
 - @players.each do |player|
   = player.first_name
--#= render 'form'
+= render 'form'
 
 -#= link_to 'Back', admin_clubs_path
 
-= form_for @team_sheet, url: user_team_sheets_path(@team_sheet) do |f|
-  = f.hidden_field :club_id, value: current_user.club.id
-  = f.hidden_field :fixture_id, value: @fixture.id
-  = f.label :player_1
-  = f.select(:player_1, @players.all.collect {|p| [ p.first_name + ' ' + p.surname, p.first_name+ ' ' + p.surname ] }, include_blank: "Anything!")
-  = f.submit 'Save'
+
