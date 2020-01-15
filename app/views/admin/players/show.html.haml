@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @admin_zone.name
+%p
+  %b League:
+  = @admin_zone.league
+%p
+  %b Rep:
+  = @admin_zone.rep
+%p
+  %b Rep Club:
+  = @admin_zone.rep_club
+%p
+  %b Team overall url:
+  = @admin_zone.team_overall_url
+%p
+  %b Person overall url:
+  = @admin_zone.person_overall_url
+
+= link_to 'Edit', edit_admin_zone_path(@admin_zone)
+\|
+= link_to 'Back', admin_zones_path
