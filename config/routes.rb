@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   end
 
+  namespace :user do
+    resources :team_sheets
+  end
+
   resources :zones
 
   devise_for :users

@@ -4,6 +4,7 @@ class Club < ApplicationRecord
   has_many :memberships
   has_many :zones, through: :memberships
   has_many :players
+  has_many :team_sheets
   scope :published, -> { where.not(name: 'Google') }
 
   def self.import(file)

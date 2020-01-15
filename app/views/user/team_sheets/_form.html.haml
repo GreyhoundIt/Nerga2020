@@ -1,0 +1,5 @@
+= form_for @team_sheet, url: user_team_sheets_path(@team_sheet) do |f|
+  = f.hidden_field :club_id, value: 12
+  = f.hidden_field :your_model_field_name, value: 12
+  = f.select(:player_1, @players.all.collect {|p| [ p.first_name + ' ' + p.surname, p.first_name ] }, include_blank: "Anything!")
+  = f.submit 'Save'
