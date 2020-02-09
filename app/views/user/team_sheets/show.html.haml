@@ -1,2 +1,10 @@
 %h1 teamsheet
-= @team_sheet.player_1
+= @team_sheet.player_1 if @team_sheet.player_1.present?
+= @team_sheet.player_2 if @team_sheet.player_2.present?
+= @team_sheet.player_3 if @team_sheet.player_3.present?
+= @team_sheet.player_4 if @team_sheet.player_4.present?
+= @team_sheet.player_5 if @team_sheet.player_5.present?
+= @team_sheet.player_6 if @team_sheet.player_6.present?
+= @team_sheet.player_7 if @team_sheet.player_7.present?
+= @team_sheet.player_8 if @team_sheet.player_8.present?
+

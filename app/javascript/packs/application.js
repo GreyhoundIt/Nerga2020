@@ -18,4 +18,16 @@ require("app")
 // const imagePath = (name) => images(name, true)
 
 
+import Vue from 'vue/dist/vue.esm'
+import Matthew from '../matthew.vue'
+import VueResource from 'vue-resource'
 
+Vue.use(VueResource)
+
+Vue.component('matthew', Matthew)
+document.addEventListener('DOMContentLoaded', () => {
+    Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    new Vue({
+        el: '[data-behaviour="vue"]',
+    });
+})
