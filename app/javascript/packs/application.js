@@ -19,12 +19,12 @@ require("app")
 
 
 import Vue from 'vue/dist/vue.esm'
-import Matthew from '../matthew.vue'
+import TeamSheetForm from '../team_sheet_form.vue'
 import VueResource from 'vue-resource'
 
 Vue.use(VueResource)
 
-Vue.component('matthew', Matthew)
+Vue.component('team_sheet_form', TeamSheetForm)
 document.addEventListener('DOMContentLoaded', () => {
     Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     new Vue({

@@ -1,6 +1,4 @@
-%h1 Team Sheet for #{@zone.name} fixture at #{@fixture.home_club}
-- @players.each do |player|
-  = player.first_name
+%h1.text-center Team Sheet for #{@zone.name} fixture at #{@fixture.home_club}
 = render 'form'
 
 -#= link_to 'Back', admin_clubs_path

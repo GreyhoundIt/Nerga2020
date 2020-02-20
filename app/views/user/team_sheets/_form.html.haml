@@ -5,5 +5,5 @@
 -#  = f.select(:player_1, @players.all.collect {|p| [ p.first_name + ' ' + p.surname, p.first_name+ ' ' + p.surname ] }, include_blank: "Anything!")
 -#  = f.submit 'Save'
 
-%matthew{":players" => @players.to_json,":team_sheet" => @team_sheet.to_json(except: [ :created_at, :updated_at]),":fixture" => @fixture.id.to_json,":club" => current_user.club_id}
+%team_sheet_form{":players" => @players.to_json,":team_sheet" => @team_sheet.to_json(except: [ :created_at, :updated_at]),":fixture" => @fixture.id.to_json,":club" => current_user.club_id}
 
