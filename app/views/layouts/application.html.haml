@@ -19,5 +19,6 @@
     = render 'layouts/header'
     %p.notice= notice
     %p.alert= alert
-    = yield
+    .container{"data-behaviour" => "vue"}
+      = yield
     = render 'layouts/footer'

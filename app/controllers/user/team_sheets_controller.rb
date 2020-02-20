@@ -25,7 +25,7 @@ class User::TeamSheetsController < ::User::BaseController
     respond_to do |format|
       if @team_sheet.save
         format.html { redirect_to user_team_sheet_path(@team_sheet), notice: 'Team sheet was successfully created.' }
-        format.json { render :show, status: :created, location: @team_sheet }
+        format.json { render json: { teamsheet: @team_sheet }, status: :ok }
       else
         format.html { render :new }
         format.json { render json: @team_sheet.errors, status: :unprocessable_entity }
@@ -38,8 +38,11 @@ class User::TeamSheetsController < ::User::BaseController
   def update
     respond_to do |format|
       if @team_sheet.update(team_sheet_params)
-        format.html { redirect_to team_sheet_path(@team_sheet), notice: 'Team sheet was successfully updated.' }
-        format.json { render :show, status: :ok, location: @team_sheet }
+        format.html {
+          redirect_to user_team_sheet_path(@team_sheet), notice: 'Team sheet was successfully updated.' }
+        format.json {
+          render json: { teamsheet: @team_sheet }, status: :ok
+        }
       else
         format.html { render :edit }
         format.json { render json: @team_sheet.errors, status: :unprocessable_entity }
@@ -50,7 +53,7 @@ class User::TeamSheetsController < ::User::BaseController
   private
 
   def set_players
-    @players = current_user.club.players
+    @players = current_user.club.players.sort_by { |p| [p.first_name, p.surname] }
   end
 
   def set_fixture
@@ -66,7 +69,8 @@ class User::TeamSheetsController < ::User::BaseController
   end
 
   def team_sheet_params
-    params.require(:team_sheet).permit(:fixture_id,
+    params.require(:team_sheet).permit(:id,
+                                       :fixture_id,
                                        :club_id,
                                        :player_1,
                                        :player_2,

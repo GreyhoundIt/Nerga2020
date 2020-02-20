@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   namespace :user do
     resources :team_sheets
+    post '/player/add' => 'players#add'
   end
 
   resources :zones
