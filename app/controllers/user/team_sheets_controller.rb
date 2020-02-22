@@ -6,6 +6,7 @@ class User::TeamSheetsController < ::User::BaseController
   # GET /user/team_sheets/1
   # GET /user/team_sheets/1.json
   def show
+    @fixture = Fixture.find(@team_sheet.fixture_id)
   end
 
   # GET /user/team_sheets/new
