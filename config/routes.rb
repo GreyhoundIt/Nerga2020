@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
     resources :fixtures do
       collection { post :import }
+      get '/get_fixture_teamsheet', to: 'fixtures#get_fixture_teamsheet'
     end
 
     resources :zones do
