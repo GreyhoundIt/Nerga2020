@@ -19,4 +19,15 @@ class Fixture < ApplicationRecord
       )
     end
   end
+
+  def get_fixture_teamsheet
+    csv_string = CSV.generate do |csv|
+      csv << ["Club"] + team_sheets.attribute_names
+      team_sheets.each do |team_sheet|
+        club = Club.find(team_sheet.club_id).name
+        csv << [club] + team_sheet.attributes.values
+      end
+    end
+  end
+
 end

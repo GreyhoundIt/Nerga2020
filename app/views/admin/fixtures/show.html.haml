@@ -25,6 +25,8 @@
   %b Person overall:
   = @admin_fixture.person_overall
 
+= link_to "Download Team Sheets", admin_fixture_get_fixture_teamsheet_path(@admin_fixture)
+
 = link_to 'Edit', edit_admin_fixture_path(@admin_fixture)
 \|
 = link_to 'Back', admin_fixtures_path

@@ -1,5 +1,5 @@
 class Admin::FixturesController < ::Admin::BaseController
-  before_action :set_admin_fixture, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_fixture, only: [:show, :edit, :update, :destroy ]
 
   def import
     Fixture.import(params[:file])
@@ -65,6 +65,11 @@ class Admin::FixturesController < ::Admin::BaseController
       format.html { redirect_to admin_fixtures_url, notice: 'Fixture was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def get_fixture_teamsheet
+    fixture = Fixture.find(params[:fixture_id])
+    send_data fixture.get_fixture_teamsheet, filename: "#{fixture.zone_name}#{fixture.home_club}.csv"
   end
 
   private
