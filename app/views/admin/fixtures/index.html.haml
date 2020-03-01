@@ -12,6 +12,7 @@
       %th Zone
       %th Zone name
       %th Home club
+      %th Start time
       %th Bye teams
       %th Start sheet skeleton
       %th Start sheet official
@@ -27,6 +28,7 @@
         %td= admin_fixture.zone_id
         %td= admin_fixture.zone_name
         %td= admin_fixture.home_club
+        %td= admin_fixture.start_time.strftime("%e-%b, %H:%I")
         %td= admin_fixture.bye_teams
         %td= admin_fixture.start_sheet_skeleton
         %td= admin_fixture.start_sheet_official
