@@ -20,6 +20,17 @@ class Fixture < ApplicationRecord
     end
   end
 
+  def upload_skeleton_start_sheet(file)
+    debugger
+
+    #S3_CLIENT.put_object(
+    #    bucket: ENV['S3_BUCKET'],
+    #    key: "skeleton_start_sheets/#{self.zone_name}_#{self.home_club}.pdf",
+    #    body: file_contents
+    #)
+    false
+  end
+
   def get_fixture_teamsheet
     csv_string = CSV.generate do |csv|
       csv << ["Club"] + team_sheets.attribute_names

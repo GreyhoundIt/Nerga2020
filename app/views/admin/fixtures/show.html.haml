@@ -1,5 +1,8 @@
 %p#notice= notice
 
+= form_tag upload_skeleton_start_sheet_admin_fixture_url(fixture_id: @admin_fixture.id), multipart: true do
+  = file_field_tag :file
+  = submit_tag "Upload Skeleton Start Sheet"
 %p
   %b Zone:
   = @admin_fixture.zone_id

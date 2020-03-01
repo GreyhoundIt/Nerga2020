@@ -72,6 +72,18 @@ class Admin::FixturesController < ::Admin::BaseController
     send_data fixture.get_fixture_teamsheet, filename: "#{fixture.zone_name}#{fixture.home_club}.csv"
   end
 
+  def upload_skeleton_start_sheet
+    file = params[:file]
+    fixture = Fixture.find(params[:fixture_id])
+    flash[:notice] = "Skeleton start sheet uploaded"
+    S3_CLIENT.put_object(
+      bucket: 'nerga',
+      key: "skeleton_start_sheets/#{fixture.zone_name}_#{fixture.home_club}.pdf",
+      body: File.read(file)
+    )
+    redirect_to admin_fixtures_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_fixture
