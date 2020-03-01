@@ -1,3 +1,31 @@
 // Place all the styles related to the Admin/Fixtures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "vars";
+
+table {
+  width: 100%;
+  vertical-align: center;
+}
+
+table a, table a:hover {
+  color: $third_colour;   
+}
+
+th {
+  background-color: $third_colour;
+  color: white;
+  padding: 2rem;
+}
+tr {
+  height: 2rem;
+}
+
+tr:nth-child(even) {
+  background-color: $font_primary_color;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
