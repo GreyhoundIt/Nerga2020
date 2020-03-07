@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
     resources :zones do
       collection { post :import }
+      member do
+        post :upload_team_overall
+        post :upload_person_overall
+      end
     end
 
     resources :clubs do

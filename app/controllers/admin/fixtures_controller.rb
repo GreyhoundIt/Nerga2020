@@ -74,26 +74,22 @@ class Admin::FixturesController < ::Admin::BaseController
   end
 
   def upload_skeleton_start_sheet
-    @fixture.upload_skeleton_start_sheet(@file)
-    flash[:notice] = 'file uploaded'
+    flash[:notice] = @fixture.upload_skeleton_start_sheet(@file) ? 'file uploaded' : 'error uploading file'
     redirect_to admin_fixtures_path
   end
 
   def upload_start_sheet
-    @fixture.upload_start_sheet(@file)
-    flash[:notice] = 'file uploaded'
+    flash[:notice] = @fixture.upload_start_sheet(@file) ? 'file uploaded' : 'error uploading file'
     redirect_to admin_fixtures_path
   end
 
   def upload_team_overall
-    @fixture.upload_team_overall(@file)
-    flash[:notice] = 'file uploaded'
+    flash[:notice] = @fixture.upload_team_overall(@file) ? 'file uploaded' : 'error uploading file'
     redirect_to admin_fixtures_path
   end
 
   def upload_person_overall
-    @fixture.upload_person_overall(@file)
-    flash[:notice] = 'file uploaded'
+    flash[:notice] = @fixture.upload_person_overall(@file) ? 'file uploaded' : 'error uploading file'
     redirect_to admin_fixtures_path
   end
 

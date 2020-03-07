@@ -1,4 +1,16 @@
-%h1 Editing Zone
+%h1 Editing #{@admin_zone.name} Zone
+
+%hr
+= form_tag upload_team_overall_admin_zone_url(zone_id: @admin_zone.id), multipart: true do
+  = label_tag "Team Overall"
+  = file_field_tag :file
+  = submit_tag "Upload Team Overall"
+
+%hr
+= form_tag upload_person_overall_admin_zone_url(zone_id: @admin_zone.id), multipart: true do
+  = label_tag "Person Overall"
+  = file_field_tag :file
+  = submit_tag "Upload Person Overall"
 
 = render 'form'
 

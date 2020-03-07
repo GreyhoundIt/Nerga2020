@@ -21,28 +21,36 @@ class Fixture < ApplicationRecord
   end
 
   def upload_skeleton_start_sheet(file)
-    file_path = "skeleton_start_sheets/#{get_filename}"
+    return false unless pdf_file(file)
+
+    file_path = "skeleton_start_sheets/#{build_file_path}"
     link = "https://nerga.s3.eu-west-2.amazonaws.com/#{file_path}"
     S3FileUploader.new.put_file(file_path: file_path, file: file)
     update(start_sheet_skeleton: link)
   end
 
   def upload_start_sheet(file)
-    file_path = "start_sheets/#{get_filename}"
+    return false unless pdf_file(file)
+
+    file_path = "start_sheets/#{build_file_path}"
     link = "https://nerga.s3.eu-west-2.amazonaws.com/#{file_path}"
     S3FileUploader.new.put_file(file_path: file_path, file: file)
     update(start_sheet_official: link)
   end
 
   def upload_team_overall(file)
-    file_path = "fixture_team_overall/#{get_filename}"
+    return false unless pdf_file(file)
+
+    file_path = "fixture_team_overall/#{build_file_path}"
     link = "https://nerga.s3.eu-west-2.amazonaws.com/#{file_path}"
     S3FileUploader.new.put_file(file_path: file_path, file: file)
     update(team_overall: link)
   end
 
   def upload_person_overall(file)
-    file_path = "fixture_person_overall/#{get_filename}"
+    return false unless pdf_file(file)
+
+    file_path = "fixture_person_overall/#{build_file_path}"
     link = "https://nerga.s3.eu-west-2.amazonaws.com/#{file_path}"
     S3FileUploader.new.put_file(file_path: file_path, file: file)
     update(person_overall: link)
@@ -60,8 +68,20 @@ class Fixture < ApplicationRecord
 
   private
 
-  def get_filename
-    "#{zone_name.gsub(' ', '_')}_#{home_club.gsub(' ', '_')}.pdf"
+  def sanitized_zone_name
+    zone_name.gsub(' ', '_')
+  end
+
+  def sanitized_club_name
+    home_club.gsub(' ', '_')
+  end
+
+  def build_file_path
+    "#{sanitized_zone_name}/#{sanitized_club_name}.pdf"
+  end
+
+  def pdf_file(file)
+    file.content_type == 'application/pdf'
   end
 
 end
