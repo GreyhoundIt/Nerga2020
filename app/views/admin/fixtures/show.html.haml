@@ -1,8 +1,5 @@
 %p#notice= notice
-
-= form_tag upload_skeleton_start_sheet_admin_fixture_url(fixture_id: @admin_fixture.id), multipart: true do
-  = file_field_tag :file
-  = submit_tag "Upload Skeleton Start Sheet"
+%h1  #{@admin_fixture.home_club} Fixture
 %p
   %b Zone:
   = @admin_fixture.zone_id
@@ -17,16 +14,16 @@
   = @admin_fixture.bye_teams
 %p
   %b Start sheet skeleton:
-  = @admin_fixture.start_sheet_skeleton
+  = link_to @admin_fixture.start_sheet_skeleton, @admin_fixture.start_sheet_skeleton
 %p
   %b Start sheet official:
-  = @admin_fixture.start_sheet_official
+  = link_to @admin_fixture.start_sheet_official, @admin_fixture.start_sheet_official
 %p
   %b Team overall:
-  = @admin_fixture.team_overall
+  = link_to @admin_fixture.team_overall, @admin_fixture.team_overall
 %p
   %b Person overall:
-  = @admin_fixture.person_overall
+  = link_to @admin_fixture.person_overall, @admin_fixture.person_overall
 
 = link_to "Download Team Sheets", admin_fixture_get_fixture_teamsheet_path(@admin_fixture)
 

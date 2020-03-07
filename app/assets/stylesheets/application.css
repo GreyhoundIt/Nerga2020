@@ -103,6 +103,10 @@
     padding: 10px;
 }
 
+a:visited {
+    
+}
+
 @media only screen and (min-width: 600px) {
     .login-main {
         margin: 40px 190px;

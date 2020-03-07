@@ -1,10 +1,10 @@
 %section.zone-header
   = render "zones/header"
-
-%section.fortnight
-  %h1 Upcoming Fixtures
-  - @next_fixtures.each do |fixture|
-    = render "zones/upcoming", fixture: fixture
+-if @next_fixtures.present?
+  %section.fortnight
+    %h1 Upcoming Fixtures
+    - @next_fixtures.each do |fixture|
+      = render "zones/upcoming", fixture: fixture
 
 
 %section.fixtures

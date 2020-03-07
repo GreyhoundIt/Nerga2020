@@ -9,7 +9,7 @@ table {
 }
 
 table a, table a:hover {
-  color: $third_colour;   
+  color: $third_colour;
 }
 
 th {
@@ -28,4 +28,13 @@ tr:nth-child(even) {
 td {
   text-align: center;
   vertical-align: middle;
+}
+
+a:link{
+  text-decoration: none;
+  color: $third_colour;
+}
+a:visited{
+  text-decoration: none;
+  color: $third_colour;
 }

@@ -18,6 +18,7 @@
       %th Start sheet official
       %th Team overall
       %th Person overall
+      %th Download start sheets
       %th
       %th
       %th
@@ -30,10 +31,11 @@
         %td= admin_fixture.home_club
         %td= admin_fixture.start_time.strftime("%e-%b, %H:%I")
         %td= admin_fixture.bye_teams
-        %td= admin_fixture.start_sheet_skeleton
-        %td= admin_fixture.start_sheet_official
-        %td= admin_fixture.team_overall
-        %td= admin_fixture.person_overall
+        %td= link_to "Skeleton Start Sheet", admin_fixture.start_sheet_skeleton if admin_fixture.start_sheet_skeleton.present?
+        %td= link_to "Official Start Sheet", admin_fixture.start_sheet_official if admin_fixture.start_sheet_official.present?
+        %td= link_to "Team Overall", admin_fixture.team_overall if admin_fixture.team_overall.present?
+        %td= link_to "Person Overall", admin_fixture.person_overall if admin_fixture.person_overall.present?
+        %td= link_to "Download Team Sheets", admin_fixture_get_fixture_teamsheet_path(admin_fixture)
         %td= link_to 'Show', admin_fixture_path(admin_fixture)
         %td= link_to 'Edit', edit_admin_fixture_path(admin_fixture)
         %td= link_to 'Destroy', admin_fixture_path(admin_fixture), method: :delete, data: { confirm: 'Are you sure?' }
