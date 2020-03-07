@@ -13,8 +13,8 @@
       %th League
       %th Rep
       %th Rep Club
-      %th Team overall url
-      %th Person overall url
+      %th Team overall
+      %th Person overall
       %th
       %th
       %th
@@ -26,12 +26,12 @@
         %td= admin_zone.league
         %td= admin_zone.rep
         %td= admin_zone.rep_club
-        %td= admin_zone.team_overall_url
-        %td= admin_zone.person_overall_url
+        %td= link_to "Team Overall", admin_zone.team_overall_url if admin_zone.team_overall_url.present?
+        %td= link_to "Person Overall", admin_zone.person_overall_url if admin_zone.person_overall_url.present?
         %td= link_to 'Show', admin_zone_path(admin_zone)
         %td= link_to 'Edit', edit_admin_zone_path(admin_zone)
         %td= link_to 'Destroy', admin_zone_path(admin_zone), method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Zone', new_admin_zone_path
+

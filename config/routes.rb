@@ -3,11 +3,21 @@ Rails.application.routes.draw do
 
     resources :fixtures do
       collection { post :import }
+      member do
+        post :upload_skeleton_start_sheet
+        post :upload_start_sheet
+        post :upload_team_overall
+        post :upload_person_overall
+      end
       get '/get_fixture_teamsheet', to: 'fixtures#get_fixture_teamsheet'
     end
 
     resources :zones do
       collection { post :import }
+      member do
+        post :upload_team_overall
+        post :upload_person_overall
+      end
     end
 
     resources :clubs do

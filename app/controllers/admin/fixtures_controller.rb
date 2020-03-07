@@ -1,16 +1,17 @@
 class Admin::FixturesController < ::Admin::BaseController
   before_action :set_admin_fixture, only: [:show, :edit, :update, :destroy ]
+  before_action :set_uploaded_params, only: [:upload_skeleton_start_sheet, :upload_start_sheet, :upload_person_overall, :upload_team_overall]
 
   def import
     Fixture.import(params[:file])
-    flash[:notice] = "Fixture list updated"
+    flash[:notice] = 'Fixture list updated'
     redirect_to admin_fixtures_path
   end
 
   # GET /admin/fixtures
   # GET /admin/fixtures.json
   def index
-    @admin_fixtures = Fixture.all
+    @admin_fixtures = Fixture.all.order(:zone_name, start_time: :asc)
   end
 
   # GET /admin/fixtures/1
@@ -72,14 +73,39 @@ class Admin::FixturesController < ::Admin::BaseController
     send_data fixture.get_fixture_teamsheet, filename: "#{fixture.zone_name}#{fixture.home_club}.csv"
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_fixture
-      @admin_fixture = Fixture.find(params[:id])
-    end
+  def upload_skeleton_start_sheet
+    flash[:notice] = @fixture.upload_skeleton_start_sheet(@file) ? 'file uploaded' : 'error uploading file'
+    redirect_to admin_fixtures_path
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_fixture_params
-      params.require(:admin_fixture).permit(:zone_id, :zone_name, :start_time, :home_club, :bye_teams, :start_sheet_skeleton, :start_sheet_official, :team_overall, :person_overall)
-    end
+  def upload_start_sheet
+    flash[:notice] = @fixture.upload_start_sheet(@file) ? 'file uploaded' : 'error uploading file'
+    redirect_to admin_fixtures_path
+  end
+
+  def upload_team_overall
+    flash[:notice] = @fixture.upload_team_overall(@file) ? 'file uploaded' : 'error uploading file'
+    redirect_to admin_fixtures_path
+  end
+
+  def upload_person_overall
+    flash[:notice] = @fixture.upload_person_overall(@file) ? 'file uploaded' : 'error uploading file'
+    redirect_to admin_fixtures_path
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_fixture
+    @admin_fixture = Fixture.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def admin_fixture_params
+    params.require(:fixture).permit(:zone_id, :zone_name, :start_time, :home_club, :bye_teams, :start_sheet_skeleton, :start_sheet_official, :team_overall, :person_overall)
+  end
+
+  def set_uploaded_params
+    @file = params[:file]
+    @fixture = Fixture.find(params[:fixture_id])
+  end
 end
