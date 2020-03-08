@@ -1,0 +1,15 @@
+// Place all the styles related to the admin/dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-dashboard{
+  display: grid;
+  grid-template-columns: repeat(1, 2fr);
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+.admin-box{
+  padding: 30px;
+  background: #5bb5f9;
+}

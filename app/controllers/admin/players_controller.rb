@@ -6,9 +6,15 @@ class Admin::PlayersController < ::Admin::BaseController
     redirect_to admin_players_path
   end
 
+  def remove_orphaned_players
+    Player.remove_orphaned_players
+    flash[:notice] = "Player List Cleaned up"
+    redirect_to admin_players_path
+  end
+
   def index
-    @issues = Player.where(club_id: nil)
-    @players = Player.all
+    @issues = Player.no_club
+    @players = Player.ordered
   end
 
 end

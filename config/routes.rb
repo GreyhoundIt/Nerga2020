@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
+    get 'dashboard/show'
+  end
+  namespace :admin do
 
     resources :fixtures do
       collection { post :import }
@@ -25,9 +28,11 @@ Rails.application.routes.draw do
     end
 
     resources :players do
-      collection { post :import }
+      collection do
+        post :import
+        get :remove_orphaned_players
+      end
     end
-
   end
 
   namespace :user do

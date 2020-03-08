@@ -4,6 +4,9 @@ class Player < ApplicationRecord
 
   belongs_to :club
 
+  scope :no_club, -> { where(club_id: nil) }
+  scope :ordered, -> { order(home_club: :asc, surname: :asc) }
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       club = Club.find_by(name: row['HOME CLUB'])
@@ -16,5 +19,10 @@ class Player < ApplicationRecord
                       club_id: club.present? ? club.id : nil
                     }, unique_by: :pin)
     end
+  end
+
+  # Delete all players with no active clubs
+  def self.remove_orphaned_players
+    no_club.destroy_all
   end
 end
