@@ -10,14 +10,12 @@ class S3FileUploader
   end
 
   def put_file(file_path: nil, file: nil)
+    file_path = "dev/#{file_path}" if Rails.env.development?
     @s3.put_object(
       bucket: 'nerga',
       key: file_path,
       body: File.read(file)
     )
-  #rescue StandardError => ex
-  #  error_writing_file(filename: name, ex: ex)
   end
-
 
 end
