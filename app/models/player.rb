@@ -17,7 +17,7 @@ class Player < ApplicationRecord
                       home_club: row['HOME CLUB'],
                       pin: row['PIN'],
                       club_id: club.present? ? club.id : nil
-                    }, unique_by: :pin)
+                    }, unique_by: %i[first_name surname home_club])
     end
   end
 
