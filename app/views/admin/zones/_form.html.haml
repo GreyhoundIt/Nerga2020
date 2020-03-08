@@ -8,10 +8,10 @@
 
   .field
     = f.label :name
-    = f.text_field :name
+    = @admin_zone.name
   .field
     = f.label :league
-    = f.text_field :league
+    = @admin_zone.league
   .field
     = f.label :rep
     = f.text_field :rep
@@ -20,13 +20,15 @@
     = f.text_field :rep_club
   .field
     = f.label :team_overall_url
-    = f.text_field :team_overall_url
+    = @admin_zone.team_overall_url
   .field
     = f.label :person_overall_url
-    = f.text_field :person_overall_url
+    = @admin_zone.person_overall_url
+    -#= f.text_field :person_overall_url
   .field
     = hidden_field_tag "zone[club_ids][]", nil
     - Club.all.order("name asc").each do |club|
+      %br
       = check_box_tag "zone[club_ids][]", club.id, @admin_zone.club_ids.include?(club.id), id: dom_id(club)
       = label_tag dom_id(club), club.name
   .actions
