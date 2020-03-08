@@ -11,7 +11,7 @@ class Admin::ClubsController < ::Admin::BaseController
   # GET /admin/clubs.jsonc
 
   def index
-    @admin_clubs = Club.all
+    @admin_clubs = Club.published.order(:name)
   end
 
   # GET /admin/clubs/1

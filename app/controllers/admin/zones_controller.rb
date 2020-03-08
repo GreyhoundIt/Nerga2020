@@ -11,7 +11,7 @@ class Admin::ZonesController < ::Admin::BaseController
   # GET /admin/zones
   # GET /admin/zones.json
   def index
-    @admin_zones = Zone.all
+    @admin_zones = Zone.all.order(name: :asc)
   end
 
   # GET /admin/zones/1
