@@ -1,0 +1,42 @@
+%body
+  %header
+    %img.logo{alt: "NERGA Logo", src: "#{asset_path( 'NERGALogo.svg' )}"}/
+    %button.js-open-menu.button Menu
+    %nav.js-navigation.navigation
+      %ul.navbar-nav
+        %li.nav-item
+          = link_to "Home", root_path
+        %li.nav-item
+          = link_to "Rules", rules_path
+        %li.nav-item
+          %a.nav-link.dropdown-trigger{href: "#"} INTER
+          %ul.nav-dropdown
+            - inter_menu_items.each do |zone|
+              %li.nav-dropdown-item= link_to "#{zone.menu_name}" , zone_path(zone)
+        %li.nav-item
+          %a.nav-link.dropdown-trigger{href: "#"} RABBITS
+          %ul.nav-dropdown
+            - rabbits_menu_items.each do |zone|
+              %li.nav-dropdown-item= link_to "#{zone.menu_name}" , zone_path(zone)
+        %li.nav-item
+          %a.nav-link{href: "#"} Finals Day
+        %li.nav-item
+          = link_to "Honours", honours_path
+        %li.nav-item
+          = link_to "Links", links_path
+        %li.nav-item
+          = link_to "Sponsors", sponsors_path
+        - if user_signed_in?
+          %li.nav-item
+            = link_to( destroy_user_session_path, method: :delete) do
+              %span
+                %i.fas.fa-sign-out-alt
+                Logout
+        - else
+          %li.nav-item
+            = link_to new_user_session_path do
+              %span
+                %i.fas.fa-user-circle
+                Log in
+  - if current_user&.admin
+    = render 'layouts/admin'

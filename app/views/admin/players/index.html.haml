@@ -1,11 +1,31 @@
-%h1 Players#index
+%h1 Players
 %p
   Theres are #{@players.count} players registered
 = form_tag import_admin_players_path, multipart: true do
+  = label_tag "Import Players CSV"
   = file_field_tag :file
   = submit_tag "Import CSV"
 
-%h2 Players not linked to clubs
+
+- if @issues.present?
+  %h2 Players not linked to clubs
+  = link_to "remove all players with no active clubs", remove_orphaned_players_admin_players_url
+  %table
+    %thead
+      %tr
+        %th First name
+        %th Surname
+        %th Club
+
+    %tbody
+      - @issues.each do |player|
+        %tr
+          %td= player.first_name
+          %td= player.surname
+          %td= player.home_club
+
+%br
+  %h2 All Players
 %table
   %thead
     %tr
@@ -14,10 +34,10 @@
       %th Club
 
   %tbody
-    - @issues.each do |player|
+    - @players.each do |player|
       %tr
         %td= player.first_name
         %td= player.surname
         %td= player.home_club
 
-%br
+
