@@ -5,7 +5,7 @@
         <input name="newPlayer" class="text-box" id="newPlayer" placeholder="first_name surname">
       </label>
 
-     <p class="astrix">* Please only add a new player if they dont appear in the selection lists. 
+     <p class="astrix">* Please only add a new player if they dont appear in the selection lists.
       <br/> Please use First name and surname as they appear on materscoreboard. </p>
       <button class="add-new-player-button" v-on:click="addPlayer">Add New Player</button>
     </div>
@@ -66,25 +66,13 @@
       </select>
     </label>
     <label>Guest 1
-      <select class="select-box" v-model="team_sheet.guest_1">
-        <option v-for="player in players" v-bind:value="player.first_name + ' ' + player.surname">
-          {{ player.first_name + " " + player.surname }}
-        </option>
-      </select>
+      <input v-model="team_sheet.guest_1" class="text-box" placeholder="first_name surname (club)">
     </label>
     <label>Guest 2
-      <select class="select-box" v-model="team_sheet.guest_2">
-        <option v-for="player in players" v-bind:value="player.first_name + ' ' + player.surname">
-          {{ player.first_name + " " + player.surname }}
-        </option>
-      </select>
+      <input v-model="team_sheet.guest_2" class="text-box" placeholder="first_name surname (club)">
     </label>
     <label>Guest 3
-      <select class="select-box" v-model="team_sheet.guest_3">
-        <option v-for="player in players" v-bind:value="player.first_name + ' ' + player.surname">
-          {{ player.first_name + " " + player.surname }}
-        </option>
-      </select>
+      <input v-model="team_sheet.guest_3" class="text-box" placeholder="first_name surname (club)">
     </label>
 
     <button class="pure-button fuller-button blue-enter fixture-button form-button" v-on:click="submit">Submit</button>
