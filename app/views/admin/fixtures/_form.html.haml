@@ -8,27 +8,34 @@
 
   .field
     = f.label :zone_id
-    = f.number_field :zone_id, readonly: true , disable: true
+    -#= f.number_field :zone_id, readonly: true , disable: true
+    = @admin_fixture.zone_id
   .field
     = f.label :zone_name
-    = f.text_field :zone_name, readonly: true
+    -#= f.text_field :zone_name, readonly: true
+    = @admin_fixture.zone_name
   .field
     = f.label :home_club
-    = f.text_field :home_club, readonly: true
+    -#= f.text_field :home_club, readonly: true
+    = @admin_fixture.home_club
   .field
     = f.label :bye_teams
     = f.text_field :bye_teams
   .field
     = f.label :start_sheet_skeleton
-    = f.text_field :start_sheet_skeleton, readonly: true
+    -#= f.text_field :start_sheet_skeleton, readonly: true
+    = @admin_fixture.start_sheet_skeleton
   .field
     = f.label :start_sheet_official
-    = f.text_field :start_sheet_official, readonly: true
+    -#= f.text_field :start_sheet_official, readonly: true
+    = @admin_fixture.start_sheet_official
   .field
     = f.label :team_overall
-    = f.text_field :team_overall, readonly: true
+    -#= f.text_field :team_overall, readonly: true
+    = @admin_fixture.team_overall
   .field
     = f.label :person_overall
-    = f.text_field :person_overall, readonly: true
+    -#= f.text_field :person_overall, readonly: true
+    = @admin_fixture.person_overall
   .actions
     = f.submit 'Save'

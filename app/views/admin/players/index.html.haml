@@ -32,6 +32,7 @@
       %th First name
       %th Surname
       %th Club
+      %th Delete
 
   %tbody
     - @players.each do |player|
@@ -39,5 +40,6 @@
         %td= player.first_name
         %td= player.surname
         %td= player.home_club
+        %td= link_to 'Destroy', admin_player_path(player), method: :delete, data: { confirm: 'Are you sure?' }
 
 

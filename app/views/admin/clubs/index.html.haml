@@ -12,8 +12,9 @@
     %tr
       %th Name
       %th Postcode
+      %th Membership
       %th Website
-      %th
+      -#%th
       %th
       %th
 
@@ -22,11 +23,11 @@
       %tr
         %td= admin_club.name
         %td= admin_club.postcode
-        %td= admin_club.website
-        %td= link_to 'Show', admin_club_path(admin_club)
+        %td= admin_club.zones.map(&:name)
+        %td= link_to admin_club.website, admin_club.website, target: "_blank"
+        -#%td= link_to 'Show', admin_club_path(admin_club)
         %td= link_to 'Edit', edit_admin_club_path(admin_club)
         %td= link_to 'Destroy', admin_club_path(admin_club), method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Club', new_admin_club_path

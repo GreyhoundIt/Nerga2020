@@ -17,4 +17,13 @@ class Admin::PlayersController < ::Admin::BaseController
     @players = Player.ordered
   end
 
+  def destroy
+    player = Player.find(params[:id])
+    player.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_players_url, notice: 'Player was successfully removed.' }
+      format.json { head :no_content }
+    end
+  end
+
 end
