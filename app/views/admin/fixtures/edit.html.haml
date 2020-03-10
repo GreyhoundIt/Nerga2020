@@ -11,15 +11,15 @@
   = submit_tag "Upload Start Sheet"
 %hr
 = form_tag upload_team_overall_admin_fixture_url(fixture_id: @admin_fixture.id), multipart: true do
-  = label_tag "Team Overall"
+  = label_tag "Team Results"
   = file_field_tag :file
-  = submit_tag "Upload Team Overall"
+  = submit_tag "Upload Team Results"
 
 %hr
 = form_tag upload_person_overall_admin_fixture_url(fixture_id: @admin_fixture.id), multipart: true do
-  = label_tag "Person Overall"
+  = label_tag "Player Results"
   = file_field_tag :file
-  = submit_tag "Upload Person Overall"
+  = submit_tag "Upload Player Results"
 %hr
 
 = render 'form'

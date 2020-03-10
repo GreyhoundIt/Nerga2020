@@ -27,7 +27,7 @@
         %td= admin_zone.rep
         %td= admin_zone.rep_club
         %td= link_to "Team Overall", admin_zone.team_overall_url if admin_zone.team_overall_url.present?
-        %td= link_to "Person Overall", admin_zone.person_overall_url if admin_zone.person_overall_url.present?
+        %td= link_to "Players Overall", admin_zone.person_overall_url if admin_zone.person_overall_url.present?
         %td= link_to 'Show', admin_zone_path(admin_zone)
         %td= link_to 'Edit', edit_admin_zone_path(admin_zone)
         -#%td= link_to 'Destroy', admin_zone_path(admin_zone), method: :delete, data: { confirm: 'Are you sure?' }

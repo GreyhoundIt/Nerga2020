@@ -8,9 +8,9 @@
 
 %hr
 = form_tag upload_person_overall_admin_zone_url(zone_id: @admin_zone.id), multipart: true do
-  = label_tag "Person Overall"
+  = label_tag "Players Overall"
   = file_field_tag :file
-  = submit_tag "Upload Person Overall"
+  = submit_tag "Upload Players Overall"
 
 = render 'form'
 
