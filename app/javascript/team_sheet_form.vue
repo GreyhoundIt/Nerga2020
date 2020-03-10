@@ -66,13 +66,25 @@
       </select>
     </label>
     <label>Guest 1
-      <input v-model="team_sheet.guest_1" class="text-box" placeholder="first_name surname (club)">
+      <select class="select-box" v-model="team_sheet.guest_1">
+        <option v-for="player in players" v-bind:value="player.first_name + ' ' + player.surname">
+          {{ player.first_name + " " + player.surname }}
+        </option>
+      </select>
     </label>
     <label>Guest 2
-      <input v-model="team_sheet.guest_2" class="text-box" placeholder="first_name surname (club)">
+      <select class="select-box" v-model="team_sheet.guest_2">
+        <option v-for="player in players" v-bind:value="player.first_name + ' ' + player.surname">
+          {{ player.first_name + " " + player.surname }}
+        </option>
+      </select>
     </label>
     <label>Guest 3
-      <input v-model="team_sheet.guest_3" class="text-box" placeholder="first_name surname (club)">
+      <select class="select-box" v-model="team_sheet.guest_3">
+        <option v-for="player in players" v-bind:value="player.first_name + ' ' + player.surname">
+          {{ player.first_name + " " + player.surname }}
+        </option>
+      </select>
     </label>
 
     <button class="pure-button fuller-button blue-enter fixture-button form-button" v-on:click="submit">Submit</button>
@@ -99,8 +111,21 @@
         this.club_players.push({
           first_name: name[0].charAt(0).toUpperCase() + name[0].slice(1),
           surname: name[1].charAt(0).toUpperCase() + name[1].slice(1)
-        })
-        newPlayerEl.value = ""
+        });
+        this.club_players.sort((a, b) => {
+          const nameA = a.first_name.toUpperCase();
+          const nameB = b.first_name.toUpperCase();
+          if (nameA < nameB) {
+            return -1;
+          }
+
+          if (nameA > nameB) {
+            return 1;
+          }
+
+          return 0;
+        });
+        newPlayerEl.value = "";
         this.$http.post(`/user/player/add`, {player: name}).then(response => {
           if(response.ok) {
            console.log("yeah");
