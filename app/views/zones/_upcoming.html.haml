@@ -2,8 +2,10 @@
   %h2.venue= "Venue - #{fixture.home_club}"
   %h3.start-time.upcoming= "Start time - #{fixture.start_time.strftime("%a %d %b ")} - #{fixture.start_time.strftime("%H:%M%p")}"
   %p.upcoming= "None-playing Teams -  #{fixture.bye_teams}"
-  -if user_can_enter_team? && user_has_current_team_sheet?(fixture.id)
+  -if user_can_enter_team? && user_has_current_team_sheet?(fixture.id) && fixture.open_for_entries
+    %p.upcoming= "Team entries close at #{fixture.closing_time.strftime("%a %d %b ")} - #{fixture.closing_time.strftime("%H:%M%p")}"
     = link_to "Edit Team", {:controller => "user/team_sheets", :action => "edit", :zone_id => @zone.id, :fixture_id => fixture.id}, :class => "pure-button fuller-button blue-enter fixture-button"
-  -elsif user_can_enter_team?
+  -elsif user_can_enter_team? && fixture.open_for_entries
+    %p.upcoming= "Team entries close at #{fixture.closing_time.strftime("%a %d %b ")} - #{fixture.closing_time.strftime("%H:%M%p")}"
     = link_to "Enter Team", {:controller => "user/team_sheets", :action => "new", :zone_id => @zone.id, :fixture_id => fixture.id}, :class => "pure-button fuller-button blue-enter fixture-button"
 

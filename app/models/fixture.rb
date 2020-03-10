@@ -66,6 +66,14 @@ class Fixture < ApplicationRecord
     end
   end
 
+  def closing_time
+    (start_time - 3.days).change({hour: 20, min: 0, sec: 0 })
+  end
+
+  def open_for_entries
+    Time.now < closing_time
+  end
+
   private
 
   def sanitized_zone_name
