@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 @import "vars";
 .fuller-button {
   color: $secondary_colour;
@@ -6,10 +8,15 @@
   padding: 1.2em 5em;
   letter-spacing: 0.35em;
   font-size: 1.2em;
+  -webkit-transition: background-color 0.3s, color 0.3s, -webkit-box-shadow 0.3s;
+  transition: background-color 0.3s, color 0.3s, -webkit-box-shadow 0.3s;
+  -o-transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
   transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s, -webkit-box-shadow 0.3s;
   margin: 1em;
 
   &.blue {
+    -webkit-box-shadow: inset 0 0 1em $third_colour, 0 0 1em $third_colour;
     box-shadow: inset 0 0 1em $third_colour, 0 0 1em $third_colour;
     border: $third_colour solid 2px;
   }
@@ -17,11 +24,13 @@
   &.blue:hover {
     color: $secondary_colour;
     background-color: $third_colour;
+    -webkit-box-shadow: inset 0 0 0 $third_colour, 0 0 1.5em $third_colour;
     box-shadow: inset 0 0 0 $third_colour, 0 0 1.5em $third_colour;
   }
 
   &.blue-enter {
     background-color: $third_colour;
+    -webkit-box-shadow: inset 0 0 1em $third_colour, 0 0 1em $third_colour;
     box-shadow: inset 0 0 1em $third_colour, 0 0 1em $third_colour;
     border: $third_colour solid 2px;
     color: white;
@@ -30,6 +39,7 @@
   &.blue-enter:hover {
     color: $font_primary_color;
     background-color: $third_colour;
+    -webkit-box-shadow: inset 0 0 0 $third_colour, 0 0 1.5em $third_colour;
     box-shadow: inset 0 0 0 $third_colour, 0 0 1.5em $third_colour;
   }
 }

@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 @import "vars";
 
 body {
@@ -34,8 +36,12 @@ h3 {
   padding-bottom: 10px;
 }
 header {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 120px 20px 1fr;
   grid-template-columns: 120px 1fr;
   grid-gap: 20px;
   //height:140px;
@@ -49,17 +55,6 @@ header {
   }
 }
 
-//.navbar-nav {
-//  display: grid;
-//  grid-template-columns: repeat(8, 1fr) 2fr;
-//  text-align: center;
-//  list-style-type: none;
-//  align-content: center;
-//
-//  .nav-item {
-//    align-content: center;
-//  }
-//}
 
 .logo{
   max-height: 120px;
@@ -70,8 +65,11 @@ header {
   background-size: contain;
   background: url(asset_path('bg.png')) no-repeat center center;
   height: calc(100vh - 344px);
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr)[1];
   grid-template-columns: repeat(1, 1fr);
+  -ms-flex-line-pack: end;
   align-content: end;
 }
 
@@ -88,14 +86,19 @@ header {
 }
 
 .homepage-section{
+  display:-ms-grid;
   display:grid;
+  -ms-grid-columns: 1fr;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
   background-color: $bg_colour;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
   color: $secondary_colour;
   padding: 20px;
+  -ms-flex-line-pack: center;
   align-content: center;
   p{
     padding: 10px;
@@ -107,6 +110,7 @@ header {
 
 @media only screen and (min-width: 600px) {
   .homepage-section {
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
     grid-template-columns: repeat(3, 1fr);
   }
   .home-title, .home-tagline{
@@ -144,12 +148,17 @@ footer{
 .rule-ol {
   list-style: none;
   counter-reset: my-awesome-counter;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
   li {
     counter-increment: my-awesome-counter;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
     font-size: 1.5rem;
@@ -177,12 +186,15 @@ footer{
 }
 
 .links-section{
+  display:-ms-grid;
   display:grid;
+  -ms-grid-columns: (1fr)[1];
   grid-template-columns: repeat(1,1fr);
   margin-top: 20px;
 }
 
 .links-card {
+  display: -ms-inline-grid;
   display: inline-grid;
   background-color: $secondary_colour;
   text-align: center;
@@ -199,6 +211,7 @@ footer{
 
 @media only screen and (min-width: 600px) {
   .links-section{
+    -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
     background-color: white;
   }
@@ -209,6 +222,7 @@ footer{
 
 @media only screen and (min-width: 900px) {
   .links-section{
+    -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
     background-color: white;
   }
@@ -243,21 +257,27 @@ footer{
 
 @media only screen and (min-width: 900px) {
   .honour-year-box{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
     margin: 20px;
     padding: 20px;
     border: 1px dashed $bg_colour;
   }
   .year {
+    -ms-grid-column: 1;
     grid-column-start: 1;
+    -ms-grid-column-span: 2;
     grid-column-end: 3;
   }
 }
 
 
 .sponsors-main{
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   text-align: center;
 }
