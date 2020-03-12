@@ -1,11 +1,18 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 // Place all the styles related to the admin/dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .admin-dashboard{
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (2fr)[1];
   grid-template-columns: repeat(1, 2fr);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
   text-align: center;
 }
