@@ -1,0 +1,124 @@
+.navigation {
+  display: none;
+}
+.navigation--open {
+  display: block;
+  -ms-grid-column-span: 2;
+  grid-column: span 2;
+}
+.navbar-nav {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+}
+.nav-item {
+  position: relative;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+}
+.nav-link {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.nav-dropdown-item {
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .button {
+    display: none;
+  }
+  .navigation {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr) 2fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    align-content: center;
+
+    .nav-item-top:nth-of-type(0) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+      }
+    .nav-item-top:nth-of-type(1) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1;
+      }
+    .nav-item-top:nth-of-type(2) {
+        -ms-grid-column: 3;
+        -ms-grid-row: 1;
+      }
+    .nav-item-top:nth-of-type(3) {
+        -ms-grid-column: 4;
+        -ms-grid-row: 1;
+      }
+    .nav-item-top:nth-of-type(4) {
+        -ms-grid-column: 5;
+        -ms-grid-row: 1;
+      }
+    .nav-item-top:nth-of-type(5) {
+        -ms-grid-column: 6;
+        -ms-grid-row: 1;
+      }
+    .nav-item-top:nth-of-type(6) {
+      -ms-grid-column: 7;
+      -ms-grid-row: 1;
+    }
+    .nav-item-top:nth-of-type(7) {
+      -ms-grid-column: 8;
+      -ms-grid-row: 1;
+    }
+    .nav-item-top:nth-of-type(8) {
+      -ms-grid-column: 9;
+      -ms-grid-row: 1;
+    }
+
+  }
+
+
+  .nav-item {
+    margin-bottom: 0;
+    font-size: inherit;
+  }
+  .nav-link {
+    margin-bottom: 0;
+    font-size: inherit;
+  }
+  .nav-dropdown {
+    border-top: 10px solid #38393a;
+    position: absolute;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    display: none;
+    background-color: #2E2F30;
+    padding-top: 10px;
+    width: 100%;
+    &:hover {
+      opacity: 1;
+      display: block;
+    }
+  }
+  .dropdown-trigger {
+    &:hover {
+      + {
+        .nav-dropdown {
+          opacity: 1;
+          display: block;
+        }
+      }
+    }
+  }
+  .nav-dropdown-item {
+    padding: 10px;
+  }
+
+}
