@@ -110,8 +110,23 @@ header {
 
 @media only screen and (min-width: 600px) {
   .homepage-section {
-    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr  1fr  1fr;
     grid-template-columns: repeat(3, 1fr);
+  }
+  p {
+    &:nth-child(0) {
+      -ms-grid-column: 1;
+      -ms-grid-row: 1;
+    }
+    &:nth-child(1) {
+      -ms-grid-column: 2;
+      -ms-grid-row: 1;
+    }
+    &:nth-child(2) {
+      -ms-grid-column: 3;
+      -ms-grid-row: 1;
+    }
   }
   .home-title, .home-tagline{
     margin-left:40px;
