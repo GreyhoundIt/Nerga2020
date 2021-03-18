@@ -48,5 +48,6 @@ Rails.application.routes.draw do
   get 'honours' => 'static_pages#honours'
   get 'rules' => 'static_pages#rules'
   get 'sponsors' => 'static_pages#sponsors'
+  get 'finals' => 'static_pages#finals'
   root to: 'static_pages#home'
 end

@@ -18,4 +18,9 @@ class StaticPagesController < ApplicationController
 
   def sponsors
   end
+
+  def finals
+  end
 end
+
+
