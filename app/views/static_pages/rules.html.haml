@@ -2,7 +2,7 @@
   %h1.rules-title Rules
   %section.constitution
     %h2 Constitution
-    %ol.rule-ol
+    %ol
       - t('rules.constitution.').each do |item|
         %li.rule-li
           = item[:rule].html_safe
@@ -12,3 +12,5 @@
       - t('rules.match_rule.').each do |item|
         %li.rule-li
           = item[:rule].html_safe
+    %h3 Downloadable Rules
+    =link_to"Rules PDF", root_path + 'ConstitutionAndRules2021.pdf', target: "_blank"

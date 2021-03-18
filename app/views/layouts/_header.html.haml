@@ -19,7 +19,7 @@
             - rabbits_menu_items.each do |zone|
               %li.nav-dropdown-item= link_to "#{zone.menu_name}" , zone_path(zone)
         %li.nav-item.nav-item-top
-          %a.nav-link{href: "#"} Finals Day
+          = link_to "Finals Day", finals_path
         %li.nav-item.nav-item-top
           = link_to "Honours", honours_path
         %li.nav-item.nav-item-top
