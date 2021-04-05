@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
   def honours
   end
 
-  def sponsors
+  def guidance
   end
 
   def finals

@@ -148,7 +148,7 @@ footer{
   text-align: center;
 }
 
-.constitution, .match-rules, .finals{
+.constitution, .match-rules, .finals, guidance-section{
   background-color: white;
   color: $secondary_colour;
   margin-bottom:40px;
@@ -163,6 +163,10 @@ footer{
 .finals{
   text-align: center;
   font-size: 1.5rem;
+  line-height: 30px;
+  img {
+    max-width: 90%;
+  }
 }
 .rule-li {
   list-style: disc inside none;
@@ -299,14 +303,14 @@ footer{
 }
 
 
-.sponsors-main{
+.guidance-main{
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   text-align: center;
 }
-.sponsors-section{
+.guidance-section{
   margin: 10px;
   img{
     width: 100%;
@@ -314,7 +318,10 @@ footer{
 }
 
 @media only screen and (min-width: 900px) {
-  .sponsors-section {
+  .guidance-section {
     margin: 20px;
+    background-color: white;
+    color: #38393a;
+    margin-bottom: 40px;
   }
 }
