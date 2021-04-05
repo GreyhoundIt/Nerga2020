@@ -4,8 +4,10 @@ window.onload= function (){
 
     btn.addEventListener("click", () => {
         nav.classList.toggle("navigation--open");
-        console.log("Clicked");
     })
+
+    if (GetIEVersion() > 0)
+        alert("This website is best viewed on a newer browser. Please use Edge/Chrome/Firefox");
 }
 
 
@@ -23,8 +25,4 @@ function GetIEVersion() {
 
     else
         return 0; //It is not IE
-}
-window.onload= function () {
-    if (GetIEVersion() > 0)
-        alert("This website is best viewed on a newer browser. Please use Edge/Chrome/Firefox");
 }
